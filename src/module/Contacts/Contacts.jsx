@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { getContactsItems, getFilteredContactsItems, getFilter  } from 'redux/contacts/contacts-selectors';
+import { getContactsItems, getFilteredContactsItems } from 'redux/contacts/contacts-selectors';
 import { add, remove, setFilter } from 'redux/contacts/contacts-slice';
 
 import ContactForm from 'shared/components/ContactForm';
