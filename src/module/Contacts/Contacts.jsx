@@ -1,3 +1,4 @@
+import { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getContactsItems, getFilteredContactsItems } from 'redux/contacts/contacts-selectors';
 import { add, remove, setFilter } from 'redux/contacts/contacts-slice';
@@ -13,19 +14,19 @@ function Contacts() {
        
     const dispatch = useDispatch();
 
-    function onAddContact(data) {
+    const onAddContact = useCallback((data)=> {
         const sameName = contactsItems.some(el => el.name === data.name);
         sameName
         ? alert(`${data.name} you already have in the contacts`)
         : dispatch(add(data));
-    }
-    function onRemoveContact(id) {
+    })
+    const onRemoveContact = useCallback((id) => {
         dispatch(remove(id));
-    }
-    function onFilter(e) {
+    })
+    const onFilter = useCallback((e)=>{
         const { value } = e.target;
         dispatch(setFilter(value));
-    }
+    })
 
   return (
     <>

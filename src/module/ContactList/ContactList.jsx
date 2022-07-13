@@ -1,4 +1,5 @@
 import React from 'react';
+import { memo } from 'react';
 import PropTypes from 'prop-types';
 import styles from './contactList.module.css';
 
@@ -33,4 +34,4 @@ ContactList.propTypes = {
   ),
 };
 
-export default ContactList;
+export default memo(ContactList);
