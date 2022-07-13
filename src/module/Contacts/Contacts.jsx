@@ -9,7 +9,7 @@ import ContactList from 'module/ContactList';
 function Contacts() {
   const contactsItems = useSelector(getContactsItems);
   const filteredContactsItems = useSelector(getFilteredContactsItems);
-  const filter = useSelector(getFilter);
+ 
        
     const dispatch = useDispatch();
 
